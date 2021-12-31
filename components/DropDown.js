@@ -30,14 +30,14 @@ export default DropDown = function (props) {
         borderWidth: 2,
         
       }
-  const [selectedItem, setSelectedItem] = React.useState()
+
   return (
     <View style={{    width: props.width ? props.width : '60%', paddingLeft: 20 }}>
       <Select
      
-        data={data}
-        onSelect={(value) => setSelectedItem(value)}
-        value={selectedItem}
+        data={props.data?props.data : data}
+        onSelect={(value) => props.setSelectedItem(value)}
+        value={props.value}
         config={config}
       />
     </View>

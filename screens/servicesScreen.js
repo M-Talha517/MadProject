@@ -8,6 +8,7 @@ import Divider from '../components/divider'
 import DropDown from '../components/DropDown'
 
 export default function ServicesScreen(props) {
+  const [category, setCategory] = React.useState('')
   const data = [
     { title: 'title', price: 123, duration: '3days', miscCharges: 300 },
     { title: 'title', price: 123, duration: '3days', miscCharges: 300 },
@@ -24,8 +25,16 @@ export default function ServicesScreen(props) {
           justifyContent: 'space-evenly',
         }}
       >
-        <RoundedCardWithAvatar title="My Services" width="70%" onPress={() => {}}  /* to be implemented */ />
-        <RoundedCardWithAvatar title="Add New Service" width="70%" onPress={() => {}}  /* to be implemented */ />
+        <RoundedCardWithAvatar
+          title="My Services"
+          width="70%"
+          onPress={() => {}} /* to be implemented */
+        />
+        <RoundedCardWithAvatar
+          title="Add New Service"
+          width="70%"
+          onPress={() => {}} /* to be implemented */
+        />
       </View>
       <Divider />
       <View
@@ -38,10 +47,12 @@ export default function ServicesScreen(props) {
         }}
       >
         <Text style={{ fontSize: 20, color: '#C99E3F' }}>CATEGORY:</Text>
-        <DropDown />
+        <DropDown /* to be implemented */
+          value={category}  
+          setSelectedItem={setCategory} />
       </View>
       <Divider />
-      <FlatList
+      <FlatList /* to be implemented */
         keyExtractor={(item, index) => index.toString()}
         data={props.data ? props.data : data} // to be implemented
         renderItem={({ item }) => (
