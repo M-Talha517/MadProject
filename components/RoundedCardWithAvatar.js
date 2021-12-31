@@ -26,12 +26,12 @@ export default RoundedCardWithAvatar = function (props) {
           width: props.width ? props.width : '50%',
           //to make the view row wise
           flexDirection: 'row',
-          height: props.isheader ? 40 : 50,
+          height: props.isheader ? 40 : props.avatar? 50:30,
           //for vertical alignment
           alignItems: 'center',
           //for horizontal alignment
           justifyContent: props.avatar ? 'space-between' : 'center',
-          padding: 12,
+          paddingHorizontal: 12,
           // paddingLeft: props.avatar ? 20 : 12,
         }}>
         <Text style={{ fontWeight: 'bold', color: 'purple' }}>

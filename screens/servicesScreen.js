@@ -7,6 +7,7 @@ import { FlatList } from 'react-native-gesture-handler'
 import Divider from '../components/divider'
 import DropDown from '../components/DropDown'
 
+
 export default function ServicesScreen(props) {
   const [category, setCategory] = React.useState('')
   const data = [
@@ -15,10 +16,21 @@ export default function ServicesScreen(props) {
   ]
   return (
     <View>
+      <Text
+        style={{
+          fontSize: 20,
+          fontWeight: '100',
+          alignSelf: 'center',
+          color:"grey",
+          position: 'absolute',
+          top: -80,
+          zIndex:2
+        }}
+      >MY SERVICES</Text>
       <View
         style={{
           width: '100%',
-          top: -85,
+          top: -45,
           zIndex: 1,
           position: 'absolute',
           flexDirection: 'row',
@@ -48,11 +60,13 @@ export default function ServicesScreen(props) {
       >
         <Text style={{ fontSize: 20, color: '#C99E3F' }}>CATEGORY:</Text>
         <DropDown /* to be implemented */
-          value={category}  
-          setSelectedItem={setCategory} />
+          value={category}
+          setSelectedItem={setCategory}
+        />
       </View>
       <Divider />
       <FlatList /* to be implemented */
+        style={{marginBottom:104}}
         keyExtractor={(item, index) => index.toString()}
         data={props.data ? props.data : data} // to be implemented
         renderItem={({ item }) => (
