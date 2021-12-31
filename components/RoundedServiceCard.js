@@ -4,8 +4,8 @@ import Constants from 'expo-constants';
 import { Avatar, IconButton } from 'react-native-paper';
 import Select, { SelectItem } from '@redmin_delishaj/react-native-select';
 
-// props ( avatar , title , price,  duration, minMisc, maxMisc, width , )
-export default RoundedServiceCard = function (props) {
+// props ( avatar , title , price,  duration, miscCharges, width , onPressEdit, onPressDelete )
+export default function RoundedServiceCard (props) {
   return (
     <TouchableOpacity style={{ flex: 1}  }>
       <View
@@ -15,10 +15,11 @@ export default RoundedServiceCard = function (props) {
           borderWidth:1,
           borderColor:"#C99E3F",
           alignSelf: 'center',
-          width: props.width ? props.width : '80%',
+          width: props.width ? props.width : '65%',
           height: 270,
           justifyContent: 'center',
           padding: 12,
+          marginBottom:10,
         }}>
         <View style={{ flex: 3 }}>
           <Text
@@ -34,15 +35,15 @@ export default RoundedServiceCard = function (props) {
           <Image
             style={{
               width: '90%',
-              height: '75%',
+              height: '70%',
               alignSelf: 'center',
               margin: 8,
-              borderRadius: 20,
+              borderRadius: 8,
             }}
-            source={require('@expo/snack-static/react-native-logo.png')}
-          />
+            source={{uri: 'https://reactnative.dev/img/tiny_logo.png'}}
+            />
         </View>
-        <View style={{ flex: 1.6 }}>
+        <View style={{ flex: 2.2 }}>
           {/*PRICE ROW*/}
           <View
             style={{ flexDirection: 'row', justifyContent: 'space-between' }}>
@@ -68,8 +69,7 @@ export default RoundedServiceCard = function (props) {
               Misc Charges:
             </Text>
             <Text style={{ fontSize: 16, color: 'purple' }}>
-              {props.maxMisc!="0"?props.minMisc:null}-{props.maxMisc!="0"
-              ?props.maxMisc:null}
+              {props.miscCharges}
             </Text>
           </View>
           <View
@@ -84,14 +84,14 @@ export default RoundedServiceCard = function (props) {
               color="red"
               size={20}
               mode="outlined"
-              onPress={() => {}}
+              onPress={props.onPressEdit}
             />
             <IconButton
               icon="delete"
               color="red"
               size={20}
               mode="outlined"
-              onPress={() => {}}
+              onPress={props.onPressDelete}
             />
           </View>
         </View>

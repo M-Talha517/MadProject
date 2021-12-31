@@ -4,7 +4,8 @@ import Constants from 'expo-constants'
 import Background from './components/Background'
 import { Avatar } from 'react-native-paper'
 // You can import from local files
-import { HomeScreen } from './screens/homeScreen'
+import HomeScreen from './screens/homeScreen'
+import ServicesScreen from './screens/servicesScreen'
 import 'react-native-gesture-handler'
 import { createDrawerNavigator } from '@react-navigation/drawer'
 import { NavigationContainer } from '@react-navigation/native'
@@ -34,7 +35,7 @@ function Application(props) {
           }}
         >
           <Drawer.Screen name="Home" component={HomeScreen} />
-          <Drawer.Screen name="Favorites" component={HomeScreen} />
+          <Drawer.Screen name="Services" component={ServicesScreen} />
         </Drawer.Navigator>
       </NavigationContainer>
     </SafeAreaView>

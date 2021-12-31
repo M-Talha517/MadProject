@@ -3,7 +3,7 @@ import RoundedCardWithAvatar from '../components/RoundedCardWithAvatar'
 import { SafeAreaView, Text, View, StyleSheet, ScrollView } from 'react-native'
 import Background from '../components/Background'
 
-export const HomeScreen = (props) => {
+export default function (props)  {
 
   return (
     <View>
