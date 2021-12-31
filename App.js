@@ -1,27 +1,51 @@
-import * as React from 'react';
-import {SafeAreaView, Text, View, StyleSheet, } from 'react-native';
-import Constants from 'expo-constants';
-import {RoundedCardWithAvatar, RoundedServiceCard, Background} from "./components/MyComponents"
-import { Avatar } from 'react-native-paper';
+import * as React from 'react'
+import { SafeAreaView, Text, View, StyleSheet } from 'react-native'
+import Constants from 'expo-constants'
+import Background from './components/Background'
+import { Avatar } from 'react-native-paper'
 // You can import from local files
-import {HomeScreen} from "./screens/homeScreen";
+import { HomeScreen } from './screens/homeScreen'
+import 'react-native-gesture-handler'
+import { createDrawerNavigator } from '@react-navigation/drawer'
+import { NavigationContainer } from '@react-navigation/native'
 
+const Drawer = createDrawerNavigator()
 
-export default function App() {
-  return (
-    <SafeAreaView style={{marginTop:25}}>
-        <HomeScreen />
-
-      </SafeAreaView>
-  );
+export default function app(){
+  const [userName, setUserName] = React.useState('TEST USER')
+  return(
+    <Application userName={userName}/>
+  )
 }
 
+function Application(props) {
+
+  return (
+    <SafeAreaView style={styles.container}>
+      <NavigationContainer>
+        <Drawer.Navigator
+          screenOptions={{
+            header: () => (
+              <Background
+                userName={props.userName}
+                avatar={require('./assets/Frame7.png')}
+              />
+            ),
+          }}
+        >
+          <Drawer.Screen name="Home" component={HomeScreen} />
+          <Drawer.Screen name="Favorites" component={HomeScreen} />
+        </Drawer.Navigator>
+      </NavigationContainer>
+    </SafeAreaView>
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    width: "100%",
-    backgroundColor:"red",
+    width: '100%',
+    backgroundColor: 'red',
     justifyContent: 'center',
     paddingTop: Constants.statusBarHeight,
     backgroundColor: '#ecf0f1',
@@ -33,5 +57,4 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
- 
-});
+})

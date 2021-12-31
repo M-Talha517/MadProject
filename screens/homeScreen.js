@@ -3,14 +3,14 @@ import RoundedCardWithAvatar from '../components/RoundedCardWithAvatar'
 import { SafeAreaView, Text, View, StyleSheet, ScrollView } from 'react-native'
 import Background from '../components/Background'
 
-
 export const HomeScreen = (props) => {
+
   return (
     <View>
-      <Background
+      {/* <Background
         userName="TEST USER"
         avatar={require('../assets/Frame7.png')}
-      />
+      /> */}
       <Text
         style={{
           fontSize: 28,
@@ -22,10 +22,18 @@ export const HomeScreen = (props) => {
       >
         ARCH PHOTO STUDIO AND FILM MAKERS
       </Text>
-      <ScrollView style={{margin:20}}>
-          <RoundedCardWithAvatar title="My Services" avatar={require("../assets/Frame7.png")} width="70%"/>
+      <ScrollView style={{ margin: 20 }}>
+        <RoundedCardWithAvatar
+          title="My Services"
+          avatar={require('../assets/Frame7.png')}
+          width="70%"
+        />
 
-          <RoundedCardWithAvatar title="My Bookings" avatar={require("../assets/Frame7.png")} width="70%"/>
+        <RoundedCardWithAvatar
+          title="My Bookings"
+          avatar={require('../assets/Frame7.png')}
+          width="70%"
+        />
       </ScrollView>
     </View>
   )
