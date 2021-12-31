@@ -27,12 +27,14 @@ export default function (props)  {
           title="My Services"
           avatar={require('../assets/Frame7.png')}
           width="70%"
+          onPress={() => {}}  // to be implemented
         />
 
         <RoundedCardWithAvatar
           title="My Bookings"
           avatar={require('../assets/Frame7.png')}
           width="70%"
+          onPress={() => {}}  // to be implemented
         />
       </ScrollView>
     </View>

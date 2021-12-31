@@ -24,8 +24,8 @@ export default function ServicesScreen(props) {
           justifyContent: 'space-evenly',
         }}
       >
-        <RoundedCardWithAvatar title="My Services" width="70%" />
-        <RoundedCardWithAvatar title="Add New Service" width="70%" />
+        <RoundedCardWithAvatar title="My Services" width="70%" onPress={() => {}}  /* to be implemented */ />
+        <RoundedCardWithAvatar title="Add New Service" width="70%" onPress={() => {}}  /* to be implemented */ />
       </View>
       <Divider />
       <View
@@ -43,7 +43,7 @@ export default function ServicesScreen(props) {
       <Divider />
       <FlatList
         keyExtractor={(item, index) => index.toString()}
-        data={props.data?props.data:data} // to be implemented
+        data={props.data ? props.data : data} // to be implemented
         renderItem={({ item }) => (
           <RoundedServiceCard
             title={item.title}
