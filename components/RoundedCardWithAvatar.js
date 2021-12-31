@@ -18,7 +18,7 @@ export default RoundedCardWithAvatar = function (props) {
         style={{
           backgroundColor: 'white',
           borderRadius: 20,
-          marginTop:props.isHeader?8:0,
+          margin:8,
           marginRight:props.isHeader?8:0,
           borderWidth:2,
           borderColor:"#C99E3F",

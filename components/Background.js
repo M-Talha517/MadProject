@@ -24,10 +24,10 @@ export default Background = (props) => {
         avatar={props.avatar}
       />
 
-      <View style={{ width:"100%",bottom:40, position:"absolute", flexDirection:'row', justifyContent:"space-evenly"}}>
+      {props.isServiceScreen?<View style={{ width:"100%",bottom:40, position:"absolute", flexDirection:'row', justifyContent:"space-evenly"}}>
         <RoundedCardWithAvatar title="My Services" width="70%"/>
         <RoundedCardWithAvatar title="Add New Service" width="70%"/>
-      </View>
+      </View>:null}
     </ImageBackground>
   )
 }
