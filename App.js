@@ -1,18 +1,18 @@
 import * as React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import {SafeAreaView, Text, View, StyleSheet, } from 'react-native';
 import Constants from 'expo-constants';
 import {RoundedCardWithAvatar, RoundedServiceCard, Background} from "./components/MyComponents"
 import { Avatar } from 'react-native-paper';
 // You can import from local files
-
+import {HomeScreen} from "./screens/homeScreen";
 
 
 export default function App() {
   return (
-    <View style={{backgroundColor:'red'}}>
-        {/* <Background/> */}
-      <Text>aaa</Text>
-      </View>
+    <SafeAreaView style={{marginTop:25}}>
+        <HomeScreen />
+
+      </SafeAreaView>
   );
 }
 
@@ -33,4 +33,5 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     textAlign: 'center',
   },
+ 
 });

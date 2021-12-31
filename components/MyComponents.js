@@ -24,6 +24,7 @@ export const RoundedCardWithAvatar = function (props) {
           flexDirection: "row",
           height: props.isheader ? 40 : 50,
           alignItems: "center",
+          borderWidth:1.0,
           justifyContent: props.avatar ? "space-between" : "center",
           padding: 12,
           paddingLeft: props.avatar ? 20 : 0,
@@ -121,16 +122,16 @@ export const RoundedServiceCard = function (props) {
   );
 };
 
+//props {headerComponent , footerComponent}
 export const Background = (props) => {
   return (
     <ImageBackground
-      source={{
-        uri: "https://reactnative.dev/img/tiny_logo.png",
-      }}
+      source={require("../assets/Frame7.png")}
       resizeMode="cover"
-      style = {{width: '100%', flex:1, height:180}}
+      style = {{width: '100%',  height:180}}
     >
-      <Text>Inside</Text>
-    </ImageBackground>
+      {props.headerComponent}
+      {props.footerComponent?<View style={{ height:"100%",justifyContent:"flex-end"}} >{props.footerComponent}</View>:null}
+     </ImageBackground>
   );
 };
