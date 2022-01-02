@@ -9,7 +9,7 @@ import {
 } from 'react-native'
 import Select, { SelectItem } from '@redmin_delishaj/react-native-select'
 
-//props {width, config, data, selectedServiceCategory, setSelectServiceCategory}
+//props {width, config, data, value, setSelectedItem}
 export default DropDown = function (props) {
   const data = [
     { text: 'DJ & Music', value: 1 },
